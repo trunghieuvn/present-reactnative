@@ -3,6 +3,7 @@ import {
 } from 'react-navigation';
 import HomeScreen from '../screens/home';
 import TestScreen from '../screens/test';
+import PlayVideo from '../screens/playvideo'
 
 export const AppStack = createStackNavigator({
     HomeScreen: {
@@ -14,6 +15,9 @@ export const AppStack = createStackNavigator({
     },
     TestScreen: {
         screen: TestScreen 
+    },
+    PlayVideo: {
+        screen: PlayVideo 
     }
 }, {
     initialRouteName : "HomeScreen"

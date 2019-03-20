@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 
 import NetInfo from "@react-native-community/netinfo";
@@ -43,7 +43,7 @@ export default class HomeScreen extends Component {
 
   };
 
-  // =========== CALL DATA RESTFUL API ===========
+// =========== CALL DATA RESTFUL API ===========
   _getData = async () => {
     let DOMAIN_API = "https://fighttechvn.github.io/api/data.json"; 
     try {
@@ -68,6 +68,12 @@ export default class HomeScreen extends Component {
     }
   }
 
+// =========== PLAY VIDEO ===========
+  _onTouchPlayVideo() {  
+    this.props.navigation.navigate('PlayVideo', {
+      linkVideo: this.state.data.linkintro
+    })
+  }
 
   render() {
     return (
@@ -84,8 +90,14 @@ export default class HomeScreen extends Component {
                 <Text style={styles.instructions}>Platfrom: {this.state.data.Platform}</Text>
                 <Image source={{ uri: this.state.data.link }} resizeMode="contain" style={styles.containerImg} />
             </View>
-
         }
+
+        <TouchableOpacity 
+          style={styles.containerBtn}
+          onPress ={() => this._onTouchPlayVideo()}  >
+          <Text style={styles.txtBtn}>PLAY VIDEO</Text>
+        </TouchableOpacity>
+
       </View> 
     );
   }
