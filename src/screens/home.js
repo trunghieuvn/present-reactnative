@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Platform } from 'react-native';
 import { styles } from '../styles';
 
 import NetInfo from "@react-native-community/netinfo";
@@ -75,7 +75,14 @@ export default class HomeScreen extends Component {
     })
   }
 
-  render() {
+// =========== OPEN GAME HTML5 ===========
+_onTouchOpenHtml5() {  
+  this.props.navigation.navigate('WebViewClient', {
+    linkHTML5: this.state.data.game.html5
+  })
+}
+
+render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Welcome to Home Screen!</Text>
@@ -97,6 +104,16 @@ export default class HomeScreen extends Component {
           onPress ={() => this._onTouchPlayVideo()}  >
           <Text style={styles.txtBtn}>PLAY VIDEO</Text>
         </TouchableOpacity>
+
+        {
+          Platform.OS == "ios" ?
+          <TouchableOpacity 
+            style={styles.containerBtn}
+            onPress ={() => this._onTouchOpenHtml5()}  >
+            <Text style={styles.txtBtn}>OPEN HTML5</Text>
+          </TouchableOpacity>
+          : <View />
+        }
 
       </View> 
     );

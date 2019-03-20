@@ -3,7 +3,8 @@ import {
 } from 'react-navigation';
 import HomeScreen from '../screens/home';
 import TestScreen from '../screens/test';
-import PlayVideo from '../screens/playvideo'
+import PlayVideo from '../screens/playvideo';
+import WebViewClient from '../screens/webviewclient';
 
 export const AppStack = createStackNavigator({
     HomeScreen: {
@@ -18,6 +19,9 @@ export const AppStack = createStackNavigator({
     },
     PlayVideo: {
         screen: PlayVideo 
+    },
+    WebViewClient: {
+        screen: WebViewClient 
     }
 }, {
     initialRouteName : "HomeScreen"
