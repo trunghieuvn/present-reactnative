@@ -22,6 +22,14 @@ export const styles = StyleSheet.create({
       color: 'black',
       fontSize: 20,
       fontWeight: 'bold',
-    }
+    },
+    containerImg: {
+      width: 150,
+      height: 150,
+      borderWidth: 1,
+      borderColor: 'red',
+      marginVertical: 10,
+    },
+
   });
   
