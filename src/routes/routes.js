@@ -10,11 +10,12 @@ export const AppStack = createStackNavigator({
         navigationOptions: {
             // bỏ default header của thư viện 
             header: null
-    } },
+        }
+    },
     TestScreen: {
-        screen: TestScreen }
-}, 
-{
+        screen: TestScreen 
+    }
+}, {
     initialRouteName : "HomeScreen"
 }
 );
