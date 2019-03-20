@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import { styles } from './src/styles';
+import React, { Component } from 'react';
+import { createAppContainer } from "react-navigation";
+import  AppStack  from './src/routes/routes';
+
+
+const AppContainer = createAppContainer(AppStack);
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-      </View>
-    );
+    return <AppContainer />;
   }
 }
